@@ -55,7 +55,7 @@ int main() {
     double v;
 
     std::cout << "Calculate v" << std::endl;
-    //#判断状态，计算角速度，左为负，右为
+    //#判断状态，计算角速度，左为负，右为负
     if (LoaderPM(p21, p23) * A0 < 0) {
         v = -1.1 * (A0 / abs(A0)) * (M_PI - abs(A0)) / dt;
     } else if (LoaderPM(p21, p23) * A0 > 0 && intersect(p0, p2, p1, p3)) {
