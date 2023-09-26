@@ -29,7 +29,7 @@ bool intersect(Point A, Point B, Point C, Point D) {
     return ccw(A, C, D) != ccw(B, C, D) && ccw(A, B, C) != ccw(A, B, D);
 }
 
-//#判断p1 p2 p2夹角正负
+//#判断p1 p2 p2夹角正负，左为负，右为正
 double LoaderPM(Point A, Point B) {
     return A.x * B.y - A.y * B.x;
 }
@@ -50,15 +50,15 @@ int main() {
     Point p12(p2.x - p1.x, p2.y - p1.y);
     Point p21(p1.x - p2.x, p1.y - p2.y);
     Point p23(p3.x - p2.x, p3.y - p2.y);
-    double A0 = 1.2;
-    double dt = 0.01;
+    double A0 = 1.2; #车身夹角，单位弧度，左为负，右为正
+    double dt = 0.01; #更新时间间隔
     double v;
 
     std::cout << "Calculate v" << std::endl;
-    //#判断状态，计算角度
-    if (LoaderPM(p12, p23) * A0 < 0) {
+    //#判断状态，计算角速度，左为负，右为
+    if (LoaderPM(p21, p23) * A0 < 0) {
         v = -1.1 * (A0 / abs(A0)) * (M_PI - abs(A0)) / dt;
-    } else if (LoaderPM(p12, p23) * A0 > 0 && intersect(p0, p2, p1, p3)) {
+    } else if (LoaderPM(p21, p23) * A0 > 0 && intersect(p0, p2, p1, p3)) {
         v = -1.1 * (A0 / abs(A0)) * std::clamp(Angle(p21, p23) - A0, 0.0, 4.0) / dt;
     } else {
         v = 1.1 * (A0 / abs(A0)) * std::clamp(A0 - Angle(p21, p23), 0.0, 4.0) / dt;
