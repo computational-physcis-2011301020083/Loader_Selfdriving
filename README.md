@@ -167,6 +167,7 @@ int main() {
 $ git clone https://github.com/computational-physcis-2011301020083/Loader_Selfdriving.git
 $ cd Loader_Selfdriving
 $ mkdir build && cd build
+$cp ../5.txt .  
 $ python3 ../python_model.py
 
 $ cmake ..
