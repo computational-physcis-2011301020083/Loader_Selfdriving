@@ -164,28 +164,23 @@ int main() {
 *Tested with Keras 2.2.1, Python 3.6*
 
 ```bash
-$ git clone https://github.com/gosha20777/keras2cpp.git
-$ cd keras2cpp
+$ git clone https://github.com/computational-physcis-2011301020083/Loader_Selfdriving.git
+$ cd Loader_Selfdriving
 $ mkdir build && cd build
 $ python3 ../python_model.py
-[[-1.85735667]]
 
 $ cmake ..
 $ cmake --build .
 $ ./keras2cpp
-[ -1.857357 ]
+```
+or 
+
+```bash
+$ git clone https://github.com/computational-physcis-2011301020083/Loader_Selfdriving.git
+$ cd Loader_Selfdriving
+$ cd build
+$ cmake ..
+$ cmake --build .
+$ ./keras2cpp
 ```
 
-# License
-
-MIT
-
-# Similar projects
-
-I found another similar projects on Github:
-- <https://github.com/pplonski/keras2cpp/>;
-- <https://github.com/moof2k/kerasify>
-- <https://github.com/Dobiasd/frugally-deep>
-
-But It works only with Keras 1 and didn’t work for me. 
-That's why I wrote my own implementation.
