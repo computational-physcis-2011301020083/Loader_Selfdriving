@@ -50,8 +50,8 @@ int main() {
     Point p12(p2.x - p1.x, p2.y - p1.y);
     Point p21(p1.x - p2.x, p1.y - p2.y);
     Point p23(p3.x - p2.x, p3.y - p2.y);
-    double A0 = 1.2; #车身夹角，单位弧度，左为负，右为正
-    double dt = 0.01; #更新时间间隔
+    double A0 = 1.2; //#车身夹角，单位弧度，左为负，右为正
+    double dt = 0.01; //#更新时间间隔
     double v;
 
     std::cout << "Calculate v" << std::endl;
