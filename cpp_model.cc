@@ -79,6 +79,6 @@ int main() {
     // Run prediction.
     Tensor PWM = model(in);
     std::cout << v << std::endl;
-    PWM.print();
+    PWM.print(); //PWM正为左转，负为右转
     return 0;
 }
